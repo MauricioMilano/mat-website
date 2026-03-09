@@ -19,7 +19,8 @@ FROM nginx:alpine
 # Copy the build output from the build stage to the Nginx public directory
 COPY --from=build /app/dist /usr/share/nginx/html
 
-# Optional: Copy a custom Nginx configuration if needed
+# Optional: Copy a custom Nginx configuration to main nginx.conf
+# This replaces the container's main config file instead of adding a conf.d drop-in
 COPY nginx.conf /etc/nginx/nginx.conf
 
 EXPOSE 80
