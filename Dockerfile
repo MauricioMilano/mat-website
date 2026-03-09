@@ -19,8 +19,7 @@ RUN npm run build
 # ---- Production stage ----
 FROM nginx:stable-alpine
 
-# Remove default nginx static files
-RUN rm -rf /usr/share/nginx/html
+
 
 # Copy built assets from builder
 COPY --from=builder /app/dist /usr/share/nginx/html
