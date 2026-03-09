@@ -41,7 +41,7 @@ const Index: React.FC = () => {
 
       {/* WhatsApp floating button */}
       <a
-        href={`https://wa.me/552199999000?text=${encodeURIComponent("Olá SmartCon, gostaria de saber mais.")}`}
+        href={`https://wa.me/5512982910109?text=${encodeURIComponent("Olá SmartCon, gostaria de saber mais.")}`}
         target="_blank"
         rel="noreferrer"
         className="fixed right-6 bottom-6 bg-emerald-500 hover:bg-emerald-600 text-white p-4 rounded-full shadow-lg z-50"

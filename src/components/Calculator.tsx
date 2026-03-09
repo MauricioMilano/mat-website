@@ -102,7 +102,7 @@ const Calculator: React.FC = () => {
   };
 
   const whatsappHref = (cat: string, val: number) =>
-    `https://wa.me/552199999000?text=${encodeURIComponent(`Olá SmartCon, gostaria de saber mais sobre o consórcio de ${cat} no valor de R$ ${val}`)}`;
+    `https://wa.me/5512982910109?text=${encodeURIComponent(`Olá SmartCon, gostaria de saber mais sobre o consórcio de ${cat} no valor de R$ ${val}`)}`;
 
   return (
     <section id="calculadora" className="py-16 px-6 bg-slate-50">

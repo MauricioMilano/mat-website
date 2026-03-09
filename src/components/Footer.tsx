@@ -23,7 +23,7 @@ const Footer: React.FC = () => {
           <div className="text-sm text-slate-200">Operamos conforme as normas do Banco Central do Brasil.</div>
           <a
             className="mt-3 inline-block bg-amber-400 text-[#0f172a] px-4 py-2 rounded-full font-semibold"
-            href={`https://wa.me/552199999000?text=${encodeURIComponent("Olá SmartCon, gostaria de uma consultoria")}`}
+            href={`https://wa.me/5512982910109?text=${encodeURIComponent("Olá SmartCon, gostaria de uma consultoria")}`}
             target="_blank"
             rel="noreferrer"
           >

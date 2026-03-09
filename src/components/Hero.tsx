@@ -16,7 +16,7 @@ const Hero: React.FC = () => {
 
           <div className="flex flex-col sm:flex-row gap-3">
             <a
-              href={`https://wa.me/552199999000?text=${encodeURIComponent(
+              href={`https://wa.me/5512982910109?text=${encodeURIComponent(
                 "Olá SmartCon, vi o site e gostaria de uma simulação personalizada"
               )}`}
               target="_blank"
