@@ -1,17 +1,56 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import React from "react";
+import Hero from "@/components/Hero";
+import Plans from "@/components/Plans";
+import Calculator from "@/components/Calculator";
+import Footer from "@/components/Footer";
 
-import { MadeWithDyad } from "@/components/made-with-dyad";
-
-const Index = () => {
+const Index: React.FC = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">
-          Start building your amazing project here!
-        </p>
-      </div>
-      <MadeWithDyad />
+    <div className="font-sans">
+      <Hero />
+      <main>
+        <section className="py-12 px-6 bg-white">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-2xl font-bold mb-4 text-[#0f172a]">Quem Somos</h2>
+            <p className="text-slate-600">A <strong>SmartCon</strong> nasceu com um propósito claro: democratizar o acesso ao patrimônio de forma inteligente, segura e livre de juros abusivos. Entendemos que o consórcio não é apenas um produto financeiro, mas uma ferramenta de planejamento estratégico.
+            </p>
+            <p className="text-slate-600 mt-4">Combinamos transparência total com as melhores taxas do mercado brasileiro. Na SmartCon, você não é apenas um número de cota; você é um investidor que conta com nossa expertise para escolher o plano que se encaixa perfeitamente no seu fluxo de caixa.</p>
+          </div>
+        </section>
+
+        <Plans />
+
+        <Calculator />
+
+        <section className="py-12 px-6 bg-white">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-2xl font-bold mb-4 text-[#0f172a]">Por que escolher a SmartCon?</h2>
+            <ul className="list-disc pl-5 text-slate-600 space-y-2">
+              <li><strong>Zero Juros:</strong> Diferente do financiamento bancário, aqui você não paga juros. Existe apenas uma taxa de administração diluída em todo o período.</li>
+              <li><strong>Prazos Flexíveis:</strong> Planos de até <strong>200 meses</strong> para imóveis, permitindo parcelas que cabem no seu orçamento mensal.</li>
+              <li><strong>Poder de Compra à Vista:</strong> Com a carta de crédito em mãos, você negocia como se estivesse com o dinheiro vivo, conseguindo descontos agressivos.</li>
+              <li><strong>Segurança Institucional:</strong> Operamos rigorosamente dentro das normas do Banco Central do Brasil, garantindo que seu investimento esteja protegido.</li>
+              <li><strong>Consultoria Especializada:</strong> Não apenas vendemos cotas; ajudamos você a calcular o lance ideal e a estratégia de contemplação.</li>
+            </ul>
+          </div>
+        </section>
+
+      </main>
+
+      <Footer />
+
+      {/* WhatsApp floating button */}
+      <a
+        href={`https://wa.me/552199999000?text=${encodeURIComponent("Olá SmartCon, gostaria de saber mais.")}`}
+        target="_blank"
+        rel="noreferrer"
+        className="fixed right-6 bottom-6 bg-emerald-500 hover:bg-emerald-600 text-white p-4 rounded-full shadow-lg z-50"
+        aria-label="Whatsapp"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4-.82L3 21l1.17-4.28A7.96 7.96 0 013 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+        </svg>
+      </a>
     </div>
   );
 };
