@@ -30,7 +30,7 @@ const Hero: React.FC = () => {
               rel="noreferrer"
             >
               <Button className="bg-emerald-500 hover:bg-emerald-600 text-white rounded-full px-6 py-3 shadow-lg">
-                QUERO UMA CONSULTORIA GRATUITA
+                Fale com um especialista
               </Button>
             </a>
 
