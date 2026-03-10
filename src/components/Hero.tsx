@@ -69,7 +69,7 @@ const Hero: React.FC = () => {
 
         <div className="bg-white rounded-2xl p-6 shadow-2xl">
           <img
-            src="/placeholder.svg"
+            src="/hero.jpg"
             alt="Família feliz na casa nova"
             className="w-full h-56 object-cover rounded-lg"
           />
