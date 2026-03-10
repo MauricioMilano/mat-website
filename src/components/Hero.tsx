@@ -1,8 +1,16 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Home, Truck, Car } from "lucide-react";
 
 const Hero: React.FC = () => {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    // trigger entrance animation on mount
+    const t = setTimeout(() => setMounted(true), 40);
+    return () => clearTimeout(t);
+  }, []);
+
   return (
     <section className="bg-gradient-to-b from-[#0f172a] to-[#081028] text-white py-20 px-6">
       <div className="max-w-6xl mx-auto grid gap-10 lg:grid-cols-2 items-center">
@@ -67,12 +75,20 @@ const Hero: React.FC = () => {
           </div>
         </div>
 
-        <div className="bg-white rounded-2xl p-6 shadow-2xl">
-          <img
-            src="/hero.jpg"
-            alt="Família feliz na casa nova"
-            className="w-full h-56 object-cover rounded-lg"
-          />
+        {/* Edited container: reduced padding, larger image, entrance animation + hover scale */}
+        <div className="bg-white rounded-2xl p-3 shadow-2xl overflow-hidden">
+          <div
+            className={
+              "w-full rounded-lg overflow-hidden transform transition-all duration-700 ease-out " +
+              (mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6")
+            }
+          >
+            <img
+              src="/hero.jpg"
+              alt="Família feliz na casa nova"
+              className="w-full h-72 sm:h-96 md:h-[28rem] object-cover rounded-lg transition-transform duration-600 ease-in-out hover:scale-105"
+            />
+          </div>
         </div>
       </div>
     </section>
