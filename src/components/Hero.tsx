@@ -42,9 +42,8 @@ const Hero: React.FC = () => {
             </a>
           </div>
 
-          {/* Compact horizontal cards on mobile; grid on sm+ */}
-          <div className="mt-8 flex gap-4 overflow-x-auto sm:grid sm:grid-cols-3 sm:gap-6 py-2">
-            <div className="min-w-[14rem] sm:min-w-0 flex-shrink-0 sm:flex-1 bg-white/5 rounded-xl p-3 sm:p-4 flex items-center gap-3">
+          <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div className="bg-white/5 rounded-xl p-3 sm:p-4 flex flex-col sm:flex-row items-center gap-3">
               <div className="p-2 sm:p-3 bg-white/10 rounded-lg flex-shrink-0">
                 <Home className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
               </div>
@@ -54,7 +53,7 @@ const Hero: React.FC = () => {
               </div>
             </div>
 
-            <div className="min-w-[14rem] sm:min-w-0 flex-shrink-0 sm:flex-1 bg-white/5 rounded-xl p-3 sm:p-4 flex items-center gap-3">
+            <div className="bg-white/5 rounded-xl p-3 sm:p-4 flex flex-col sm:flex-row items-center gap-3">
               <div className="p-2 sm:p-3 bg-white/10 rounded-lg flex-shrink-0">
                 <Car className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
               </div>
@@ -64,7 +63,7 @@ const Hero: React.FC = () => {
               </div>
             </div>
 
-            <div className="min-w-[14rem] sm:min-w-0 flex-shrink-0 sm:flex-1 bg-white/5 rounded-xl p-3 sm:p-4 flex items-center gap-3">
+            <div className="bg-white/5 rounded-xl p-3 sm:p-4 flex flex-col sm:flex-row items-center gap-3">
               <div className="p-2 sm:p-3 bg-white/10 rounded-lg flex-shrink-0">
                 <Truck className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
               </div>
