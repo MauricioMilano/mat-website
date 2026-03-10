@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Home, Calculator, Users, CreditCard } from "lucide-react";
+import { Home, Calculator, Users, CreditCard, MessageSquare } from "lucide-react";
 
 const Step: React.FC<{
   icon: React.ReactNode;
@@ -39,11 +39,11 @@ const HowItWorks: React.FC = () => {
         >
           <h2 className="text-2xl font-bold mb-2 text-[#0f172a]">Como funciona?</h2>
           <p className="text-slate-600">
-            Entenda em passos simples como adquirir sua cota e ser contemplado com a carta de crédito.
+            Entenda em passos simples como adquirir sua cota, contratar nosso serviço e ser contemplado com a carta de crédito.
           </p>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
           <div
             className={
               "transform transition-all duration-700 ease-out " +
@@ -72,13 +72,28 @@ const HowItWorks: React.FC = () => {
             </Step>
           </div>
 
+          {/* Nova etapa: contratar pelo WhatsApp */}
+          <div
+            className={
+              "transform transition-all duration-850 ease-out delay-125 " +
+              (mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6")
+            }
+          >
+            <Step
+              icon={<MessageSquare className="w-5 h-5" />}
+              title="3. Contrate pelo WhatsApp"
+            >
+              Entre em contato com nossa equipe pelo WhatsApp para formalizar a contratação, enviar documentos e receber orientação personalizada.
+            </Step>
+          </div>
+
           <div
             className={
               "transform transition-all duration-900 ease-out delay-150 " +
               (mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6")
             }
           >
-            <Step icon={<Users className="w-5 h-5" />} title="3. Participe das assembleias">
+            <Step icon={<Users className="w-5 h-5" />} title="4. Participe das assembleias">
               Acompanhe as assembleias mensais; se o seu lance for contemplado, você recebe prioridade para a carta de crédito.
             </Step>
           </div>
@@ -89,7 +104,7 @@ const HowItWorks: React.FC = () => {
               (mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6")
             }
           >
-            <Step icon={<CreditCard className="w-5 h-5" />} title="4. Receba a carta de crédito">
+            <Step icon={<CreditCard className="w-5 h-5" />} title="5. Receba a carta de crédito">
               Ao ser contemplado, você recebe a carta de crédito para negociar como pagamento à vista e conquistar seu bem.
             </Step>
           </div>
