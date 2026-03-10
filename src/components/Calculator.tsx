@@ -94,24 +94,11 @@ const Calculator: React.FC = () => {
 
   const rateOptions = useMemo(() => getRateOptions(category, value), [category, value]);
 
-  // More explicit parcela calculation:
-  // - adm, fundo and adesao are treated as one-time fees based on the credit (as provided)
-  // - seguro is a monthly amount (credito * seguro)
   const calculateParcela = (credito: number, opt: RateOption) => {
-    const admTotal = credito * opt.adm; // one-time administrative fee
-    const fundoTotal = credito * opt.fundo; // one-time reserve fund
-    const adesaoTotal = credito * opt.adesao; // one-time adesão fee (if any)
-    const seguroMensal = credito * opt.seguro; // monthly insurance
-
-    const principalAndFeesDistributed = (credito + admTotal + fundoTotal + adesaoTotal) / opt.prazo;
-    const parcela = principalAndFeesDistributed + seguroMensal;
-    return {
-      parcela,
-      admTotal,
-      fundoTotal,
-      adesaoTotal,
-      seguroMensal,
-    };
+    const taxaTotal = opt.adm + opt.fundo + opt.adesao;
+    const parcelaBase = (credito * (1 + taxaTotal)) / opt.prazo;
+    const seguro = credito * opt.seguro;
+    return parcelaBase + seguro;
   };
 
   const whatsappHref = (cat: string, val: number) =>
@@ -244,39 +231,20 @@ const Calculator: React.FC = () => {
               </div>
             ) : (
               rateOptions.map((opt) => {
-                const {
-                  parcela,
-                  admTotal,
-                  fundoTotal,
-                  adesaoTotal,
-                  seguroMensal,
-                } = calculateParcela(value, opt);
-
-                const lance =
-                  lanceValue === "" ? (lancePercent === "" ? 0 : (Number(lancePercent) / 100) * value) : Number(lanceValue);
-
+                const parcela = calculateParcela(value, opt);
+                const lance = lanceValue === "" ? (lancePercent === "" ? 0 : (Number(lancePercent) / 100) * value) : Number(lanceValue);
                 const meses = Math.min(mesesContemplacao, opt.prazo);
-
-                // total paid up to contemplated month = parcelas paid until that month + lance (one-time)
                 const totalPaidToContempl = parcela * meses + lance;
-
-                // total paid over full prazo: all parcelas for the full prazo PLUS the lance (lance is a payment done at some point)
-                // this guarantees totalPaidFull >= totalPaidToContempl
-                const totalPaidFull = parcela * opt.prazo + lance;
+                const totalPaidFull = parcela * opt.prazo;
 
                 return (
                   <div key={opt.id} className="bg-slate-50 rounded-lg p-4 flex flex-col md:flex-row md:items-center md:justify-between">
                     <div>
                       <div className="text-xs text-slate-500">Opção</div>
                       <div className="text-lg font-semibold text-[#0f172a]">{opt.label ?? `${opt.prazo} meses`}</div>
-                      <div className="text-sm text-slate-600 mt-1">
-                        Adm: {(opt.adm * 100).toFixed(2)}% • Fundo: {(opt.fundo * 100).toFixed(2)}%{" "}
-                        {opt.adesao ? `• Adesão: ${(opt.adesao * 100).toFixed(2)}%` : ""}
-                      </div>
-                      <div className="text-sm text-slate-600">Seguro (mensal): {formatBRL(seguroMensal)}</div>
-                      <div className="text-sm text-slate-600 mt-2">
-                        Lance: {formatBRL(lance)} {lance > 0 ? `(${(lance / value * 100).toFixed(2)}%)` : ""}
-                      </div>
+                      <div className="text-sm text-slate-600 mt-1">Adm: {(opt.adm * 100).toFixed(2)}% • Fundo: {(opt.fundo * 100).toFixed(2)}% {opt.adesao ? `• Adesão: ${(opt.adesao * 100).toFixed(2)}%` : ""}</div>
+                      <div className="text-sm text-slate-600">Seguro (mensal): {formatBRL(value * opt.seguro)}</div>
+                      <div className="text-sm text-slate-600 mt-2">Lance: {formatBRL(lance)} {lance > 0 ? `(${(lance / value * 100).toFixed(2)}%)` : ""}</div>
                       <div className="text-sm text-slate-600 mt-1">Meses considerados até contemplação: {meses}</div>
                     </div>
 
@@ -285,12 +253,8 @@ const Calculator: React.FC = () => {
                       <div className="text-2xl font-bold text-[#0f172a]">{formatBRL(parcela)}</div>
 
                       <div className="mt-3 text-sm text-slate-700">
-                        <div>
-                          Total pago até contemplação (parcelas + lance): <strong>{formatBRL(totalPaidToContempl)}</strong>
-                        </div>
-                        <div className="mt-1">
-                          Total pago ao final do prazo ({opt.prazo} meses, incluindo lance): <strong>{formatBRL(totalPaidFull)}</strong>
-                        </div>
+                        <div>Total pago até contemplação (parcelas + lance): <strong>{formatBRL(totalPaidToContempl)}</strong></div>
+                        <div className="mt-1">Total pago ao final do prazo ({opt.prazo} meses): <strong>{formatBRL(totalPaidFull)}</strong></div>
                       </div>
 
                       <div className="mt-3 flex justify-end">
