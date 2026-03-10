@@ -42,32 +42,32 @@ const Hero: React.FC = () => {
             </a>
           </div>
 
-          <div className="mt-8 grid grid-cols-3 gap-4">
-            <div className="bg-white/5 rounded-xl p-4 flex items-center gap-3">
-              <div className="p-3 bg-white/10 rounded-lg">
-                <Home className="w-6 h-6 text-white" />
+          <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div className="bg-white/5 rounded-xl p-3 sm:p-4 flex flex-col sm:flex-row items-center gap-3">
+              <div className="p-2 sm:p-3 bg-white/10 rounded-lg flex-shrink-0">
+                <Home className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
               </div>
-              <div>
+              <div className="text-center sm:text-left">
                 <div className="text-sm text-slate-200 font-semibold">Imóveis</div>
                 <div className="text-xs text-slate-300">Até 200 meses</div>
               </div>
             </div>
 
-            <div className="bg-white/5 rounded-xl p-4 flex items-center gap-3">
-              <div className="p-3 bg-white/10 rounded-lg">
-                <Car className="w-6 h-6 text-white" />
+            <div className="bg-white/5 rounded-xl p-3 sm:p-4 flex flex-col sm:flex-row items-center gap-3">
+              <div className="p-2 sm:p-3 bg-white/10 rounded-lg flex-shrink-0">
+                <Car className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
               </div>
-              <div>
+              <div className="text-center sm:text-left">
                 <div className="text-sm text-slate-200 font-semibold">Auto</div>
                 <div className="text-xs text-slate-300">Prazos 50–90 meses</div>
               </div>
             </div>
 
-            <div className="bg-white/5 rounded-xl p-4 flex items-center gap-3">
-              <div className="p-3 bg-white/10 rounded-lg">
-                <Truck className="w-6 h-6 text-white" />
+            <div className="bg-white/5 rounded-xl p-3 sm:p-4 flex flex-col sm:flex-row items-center gap-3">
+              <div className="p-2 sm:p-3 bg-white/10 rounded-lg flex-shrink-0">
+                <Truck className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
               </div>
-              <div>
+              <div className="text-center sm:text-left">
                 <div className="text-sm text-slate-200 font-semibold">Pesados</div>
                 <div className="text-xs text-slate-300">Até 120 meses</div>
               </div>
