@@ -15,16 +15,16 @@ const Hero: React.FC = () => {
       <div className="max-w-6xl mx-auto grid gap-10 lg:grid-cols-2 items-center">
         <div>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight mb-4 font-sans">
-            SmartCon: O caminho inteligente para conquistar seu patrimônio sem juros abusivos.
+            Callseg: O caminho inteligente para conquistar seu patrimônio sem juros abusivos.
           </h1>
           <p className="text-slate-200 text-lg sm:text-xl mb-6">
-            Democratizamos o acesso ao patrimônio com planos flexíveis, transparência e as melhores taxas do mercado. Simule agora e surpreenda-se.
+            Democratizamos o acesso ao patrimônio com planos flexíveis, transparência e as melhores taxas do mercado — com o consórcio da Porto Seguro.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3">
             <a
               href={`https://wa.me/5512982910109?text=${encodeURIComponent(
-                "Olá SmartCon, vi o site e gostaria de uma simulação personalizada"
+                "Olá Callseg (Consórcio Porto Seguro), vi o site e gostaria de uma simulação personalizada"
               )}`}
               target="_blank"
               rel="noreferrer"

@@ -102,7 +102,7 @@ const Calculator: React.FC = () => {
   };
 
   const whatsappHref = (cat: string, val: number) =>
-    `https://wa.me/5512982910109?text=${encodeURIComponent(`Olá SmartCon, gostaria de saber mais sobre o consórcio de ${cat} no valor de R$ ${val}`)}`;
+    `https://wa.me/5512982910109?text=${encodeURIComponent(`Olá Callseg (Consórcio Porto Seguro), gostaria de saber mais sobre o consórcio de ${cat} no valor de R$ ${val}`)}`;
 
   // Helpers to keep lance amount and percent in sync
   const onLancePercentChange = (pRaw: string) => {
@@ -131,7 +131,7 @@ const Calculator: React.FC = () => {
     <section id="calculadora" className="py-16 px-6 bg-slate-50">
       <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow p-6">
         <h3 className="text-xl font-bold mb-3 text-[#0f172a]">Simule agora e surpreenda-se.</h3>
-        <p className="text-slate-600 mb-6">Use a calculadora com as taxas reais da SmartCon.</p>
+        <p className="text-slate-600 mb-6">Use a calculadora com as taxas reais da Callseg (Consórcio Porto Seguro).</p>
 
         <div className="flex flex-col gap-4">
           <div className="flex gap-3">

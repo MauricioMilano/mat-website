@@ -5,8 +5,9 @@ const Footer: React.FC = () => {
     <footer className="bg-[#0f172a] text-white py-10 px-6">
       <div className="max-w-6xl mx-auto grid gap-6 md:grid-cols-3">
         <div>
-          <h4 className="text-lg font-semibold">SmartCon</h4>
+          <h4 className="text-lg font-semibold">Callseg</h4>
           <p className="text-sm text-slate-200 mt-2">Inteligência financeira para quem planeja o futuro.</p>
+          <p className="text-xs text-slate-400 mt-2">Operamos com o consórcio da Porto Seguro, oferecendo segurança e tradição.</p>
         </div>
 
         <div>
@@ -23,7 +24,7 @@ const Footer: React.FC = () => {
           <div className="text-sm text-slate-200">Operamos conforme as normas do Banco Central do Brasil.</div>
           <a
             className="mt-3 inline-block bg-amber-400 text-[#0f172a] px-4 py-2 rounded-full font-semibold"
-            href={`https://wa.me/5512982910109?text=${encodeURIComponent("Olá SmartCon, gostaria de uma consultoria")}`}
+            href={`https://wa.me/5512982910109?text=${encodeURIComponent("Olá Callseg (Consórcio Porto Seguro), gostaria de uma consultoria")}`}
             target="_blank"
             rel="noreferrer"
           >
@@ -32,7 +33,7 @@ const Footer: React.FC = () => {
         </div>
       </div>
 
-      <div className="mt-8 text-center text-slate-300 text-sm">© {new Date().getFullYear()} SmartCon. Todos os direitos reservados.</div>
+      <div className="mt-8 text-center text-slate-300 text-sm">© {new Date().getFullYear()} Callseg. Todos os direitos reservados.</div>
     </footer>
   );
 };

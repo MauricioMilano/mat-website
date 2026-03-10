@@ -20,10 +20,13 @@ const Index: React.FC = () => {
 
             <div className="bg-white/60 backdrop-blur-sm p-6 rounded-2xl shadow-sm">
               <p className="text-slate-700">
-                A <strong>SmartCon</strong> nasceu com um propósito claro: democratizar o acesso ao patrimônio de forma inteligente, segura e livre de juros abusivos. Entendemos que o consórcio não é apenas um produto financeiro, mas uma ferramenta de planejamento estratégico.
+                A <strong>Callseg</strong> nasceu com um propósito claro: democratizar o acesso ao patrimônio de forma inteligente, segura e livre de juros abusivos. Entendemos que o consórcio não é apenas um produto financeiro, mas uma ferramenta de planejamento estratégico.
               </p>
               <p className="text-slate-700 mt-4">
-                Combinamos transparência total com as melhores taxas do mercado brasileiro. Na SmartCon, você não é apenas um número de cota; você é um investidor que conta com nossa expertise para escolher o plano que se encaixa perfeitamente no seu fluxo de caixa.
+                Combinamos transparência total com as melhores taxas do mercado brasileiro. Na Callseg, você não é apenas um número de cota; você é um investidor que conta com nossa expertise para escolher o plano que se encaixa perfeitamente no seu fluxo de caixa.
+              </p>
+              <p className="text-slate-700 mt-4">
+                Trabalhamos com o consórcio da <strong>Porto Seguro</strong>, garantindo segurança, tradição e solidez para sua aquisição.
               </p>
             </div>
           </div>
@@ -37,7 +40,7 @@ const Index: React.FC = () => {
 
         <section className="py-12 px-6 bg-white">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-2xl font-bold mb-4 text-[#0f172a]">Por que escolher a SmartCon?</h2>
+            <h2 className="text-2xl font-bold mb-4 text-[#0f172a]">Por que escolher a Callseg?</h2>
             <ul className="list-disc pl-5 text-slate-600 space-y-2">
               <li><strong>Zero Juros:</strong> Diferente do financiamento bancário, aqui você não paga juros. Existe apenas uma taxa de administração diluída em todo o período.</li>
               <li><strong>Prazos Flexíveis:</strong> Planos de até <strong>200 meses</strong> para imóveis, permitindo parcelas que cabem no seu orçamento mensal.</li>
@@ -54,7 +57,7 @@ const Index: React.FC = () => {
 
       {/* WhatsApp floating button */}
       <a
-        href={`https://wa.me/5512982910109?text=${encodeURIComponent("Olá SmartCon, gostaria de saber mais.")}`}
+        href={`https://wa.me/5512982910109?text=${encodeURIComponent("Olá Callseg (Consórcio Porto Seguro), gostaria de saber mais.")}`}
         target="_blank"
         rel="noreferrer"
         className="fixed right-6 bottom-6 bg-emerald-500 hover:bg-emerald-600 text-white p-4 rounded-full shadow-lg z-50"
