@@ -10,12 +10,22 @@ const Index: React.FC = () => {
     <div className="font-sans">
       <Hero />
       <main>
-        <section className="py-12 px-6 bg-white">
-          <div className="max-w-6xl mx-auto">
+        <section className="relative py-12 px-6 bg-amber-50 overflow-hidden">
+          {/* Decorative shapes */}
+          <div className="absolute -top-24 -left-24 w-72 h-72 bg-emerald-100 rounded-full opacity-50 blur-3xl pointer-events-none hidden md:block" />
+          <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-amber-200 rounded-full opacity-40 blur-3xl pointer-events-none hidden md:block" />
+
+          <div className="max-w-6xl mx-auto relative z-10">
             <h2 className="text-2xl font-bold mb-4 text-[#0f172a]">Quem Somos</h2>
-            <p className="text-slate-600">A <strong>SmartCon</strong> nasceu com um propósito claro: democratizar o acesso ao patrimônio de forma inteligente, segura e livre de juros abusivos. Entendemos que o consórcio não é apenas um produto financeiro, mas uma ferramenta de planejamento estratégico.
-            </p>
-            <p className="text-slate-600 mt-4">Combinamos transparência total com as melhores taxas do mercado brasileiro. Na SmartCon, você não é apenas um número de cota; você é um investidor que conta com nossa expertise para escolher o plano que se encaixa perfeitamente no seu fluxo de caixa.</p>
+
+            <div className="bg-white/60 backdrop-blur-sm p-6 rounded-2xl shadow-sm">
+              <p className="text-slate-700">
+                A <strong>SmartCon</strong> nasceu com um propósito claro: democratizar o acesso ao patrimônio de forma inteligente, segura e livre de juros abusivos. Entendemos que o consórcio não é apenas um produto financeiro, mas uma ferramenta de planejamento estratégico.
+              </p>
+              <p className="text-slate-700 mt-4">
+                Combinamos transparência total com as melhores taxas do mercado brasileiro. Na SmartCon, você não é apenas um número de cota; você é um investidor que conta com nossa expertise para escolher o plano que se encaixa perfeitamente no seu fluxo de caixa.
+              </p>
+            </div>
           </div>
         </section>
 
