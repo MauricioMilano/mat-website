@@ -5,8 +5,8 @@ import { Home, Truck, Car } from "lucide-react";
 const Hero: React.FC = () => {
   return (
     <section className="bg-gradient-to-b from-[#0f172a] to-[#081028] text-white py-20 px-6">
-      <div className="max-w-6xl mx-auto grid gap-10 lg:grid-cols-3 items-center">
-        <div className="lg:col-span-1">
+      <div className="max-w-6xl mx-auto grid gap-10 lg:grid-cols-2 items-center">
+        <div>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight mb-4 font-sans">
             SmartCon: O caminho inteligente para conquistar seu patrimônio sem juros abusivos.
           </h1>
@@ -67,11 +67,11 @@ const Hero: React.FC = () => {
           </div>
         </div>
 
-        <div className="bg-white rounded-2xl p-6 shadow-2xl lg:col-span-2 flex items-center justify-center">
+        <div className="bg-white rounded-2xl p-6 shadow-2xl">
           <img
             src="/hero.jpg"
             alt="Família feliz na casa nova"
-            className="w-full h-72 sm:h-80 md:h-96 lg:h-[28rem] object-cover rounded-lg"
+            className="w-full h-64 sm:h-80 md:h-96 lg:h-[36rem] object-cover rounded-lg"
           />
         </div>
       </div>
