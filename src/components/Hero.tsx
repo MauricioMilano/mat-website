@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Home, Truck, Car } from "lucide-react";
 
 const Hero: React.FC = () => {
   const [mounted, setMounted] = useState(false);
@@ -40,38 +39,6 @@ const Hero: React.FC = () => {
                 Simular Agora
               </Button>
             </a>
-          </div>
-
-          <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <div className="bg-white/5 rounded-xl p-3 sm:p-4 flex flex-col sm:flex-row items-center gap-3">
-              <div className="p-2 sm:p-3 bg-white/10 rounded-lg flex-shrink-0">
-                <Home className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
-              </div>
-              <div className="text-center sm:text-left">
-                <div className="text-sm text-slate-200 font-semibold">Imóveis</div>
-                <div className="text-xs text-slate-300">Até 200 meses</div>
-              </div>
-            </div>
-
-            <div className="bg-white/5 rounded-xl p-3 sm:p-4 flex flex-col sm:flex-row items-center gap-3">
-              <div className="p-2 sm:p-3 bg-white/10 rounded-lg flex-shrink-0">
-                <Car className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
-              </div>
-              <div className="text-center sm:text-left">
-                <div className="text-sm text-slate-200 font-semibold">Auto</div>
-                <div className="text-xs text-slate-300">Prazos 50–90 meses</div>
-              </div>
-            </div>
-
-            <div className="bg-white/5 rounded-xl p-3 sm:p-4 flex flex-col sm:flex-row items-center gap-3">
-              <div className="p-2 sm:p-3 bg-white/10 rounded-lg flex-shrink-0">
-                <Truck className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
-              </div>
-              <div className="text-center sm:text-left">
-                <div className="text-sm text-slate-200 font-semibold">Pesados</div>
-                <div className="text-xs text-slate-300">Até 120 meses</div>
-              </div>
-            </div>
           </div>
         </div>
 
