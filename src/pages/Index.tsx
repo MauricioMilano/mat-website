@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import Plans from "@/components/Plans";
 import Calculator from "@/components/Calculator";
 import Footer from "@/components/Footer";
+import HowItWorks from "@/components/HowItWorks";
 
 const Index: React.FC = () => {
   return (
@@ -17,6 +18,8 @@ const Index: React.FC = () => {
             <p className="text-slate-600 mt-4">Combinamos transparência total com as melhores taxas do mercado brasileiro. Na SmartCon, você não é apenas um número de cota; você é um investidor que conta com nossa expertise para escolher o plano que se encaixa perfeitamente no seu fluxo de caixa.</p>
           </div>
         </section>
+
+        <HowItWorks />
 
         <Plans />
 
