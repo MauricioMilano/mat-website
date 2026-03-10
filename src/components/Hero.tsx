@@ -71,7 +71,7 @@ const Hero: React.FC = () => {
           <img
             src="/hero.jpg"
             alt="Família feliz na casa nova"
-            className="w-full h-64 sm:h-80 md:h-96 lg:h-[36rem] object-cover rounded-lg"
+            className="w-full h-56 object-cover rounded-lg"
           />
         </div>
       </div>
