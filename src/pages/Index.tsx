@@ -10,7 +10,7 @@ const Index: React.FC = () => {
     <div className="font-sans">
       <Hero />
       <main>
-        <section className="relative py-12 px-6 bg-amber-50 overflow-hidden">
+        <section className="relative py-12 px-6 bg-amber-300 overflow-hidden">
           {/* Decorative shapes */}
           <div className="absolute -top-24 -left-24 w-72 h-72 bg-emerald-100 rounded-full opacity-50 blur-3xl pointer-events-none hidden md:block" />
           <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-amber-200 rounded-full opacity-40 blur-3xl pointer-events-none hidden md:block" />
