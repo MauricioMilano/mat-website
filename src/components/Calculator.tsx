@@ -1,5 +1,6 @@
 import React, { useMemo, useState } from "react";
 import { Button } from "@/components/ui/button";
+import FieldTooltip from "@/components/FieldTooltip";
 
 type Category = "Imóvel" | "Auto" | "Pesados";
 
@@ -157,7 +158,12 @@ const Calculator: React.FC = () => {
 
           <div>
             <div className="flex justify-between items-end mb-2">
-              <div className="text-sm text-slate-600">Valor do Crédito</div>
+              <div className="text-sm text-slate-600 flex items-center gap-1">
+                Valor do Crédito
+                <FieldTooltip
+                  content="É o valor total que você pretende adquirir — por exemplo, o preço do imóvel ou veículo. As parcelas e taxas são calculadas sobre esse crédito."
+                />
+              </div>
               <div className="text-lg font-semibold text-[#0f172a]">{formatBRL(value)}</div>
             </div>
 
@@ -179,10 +185,23 @@ const Calculator: React.FC = () => {
 
           {/* New Lance inputs */}
           <div className="bg-slate-50 rounded-lg p-4">
-            <div className="text-sm text-slate-500 mb-2">Lance (opcional)</div>
+            <div className="text-sm text-slate-500 mb-2 flex items-center gap-1">
+              Lance (opcional)
+              <FieldTooltip
+                content="O lance é um valor extra que você pode oferecer nas assembleias mensais para antecipar sua contemplação. Quanto maior o lance, maior a chance de receber a carta de crédito mais cedo."
+                side="right"
+                maxWidthClass="max-w-sm"
+              />
+            </div>
             <div className="flex flex-col sm:flex-row gap-3 items-center">
               <div className="flex-1">
-                <label className="text-xs text-slate-600">Valor do lance (R$)</label>
+                <label className="text-xs text-slate-600 flex items-center gap-1">
+                  Valor do lance (R$)
+                  <FieldTooltip
+                    content="Insira o valor em reais que você pretende dar como lance. Para imóveis, você pode usar o saldo do FGTS como parte do lance."
+                    side="top"
+                  />
+                </label>
                 <input
                   type="number"
                   min={0}
@@ -194,7 +213,13 @@ const Calculator: React.FC = () => {
               </div>
 
               <div className="w-40">
-                <label className="text-xs text-slate-600">Lance (%)</label>
+                <label className="text-xs text-slate-600 flex items-center gap-1">
+                  Lance (%)
+                  <FieldTooltip
+                    content="Porcentagem do valor do crédito que corresponde ao seu lance. Por exemplo, 10% de R$ 140.000 equivale a R$ 14.000 de lance. O campo de valor e o de porcentagem são sincronizados automaticamente."
+                    side="top"
+                  />
+                </label>
                 <input
                   type="number"
                   min={0}
@@ -206,7 +231,13 @@ const Calculator: React.FC = () => {
               </div>
 
               <div className="w-40">
-                <label className="text-xs text-slate-600">Meses até contemplação</label>
+                <label className="text-xs text-slate-600 flex items-center gap-1">
+                  Meses até contemplação
+                  <FieldTooltip
+                    content="Estimativa de quantos meses você levará para ser contemplado. Isso afeta o total pago em parcelas antes de receber a carta de crédito. A contemplação pode ocorrer por sorteio ou por lance."
+                    side="top"
+                  />
+                </label>
                 <input
                   type="number"
                   min={0}
@@ -242,19 +273,65 @@ const Calculator: React.FC = () => {
                     <div>
                       <div className="text-xs text-slate-500">Opção</div>
                       <div className="text-lg font-semibold text-[#0f172a]">{opt.label ?? `${opt.prazo} meses`}</div>
-                      <div className="text-sm text-slate-600 mt-1">Adm: {(opt.adm * 100).toFixed(2)}% • Fundo: {(opt.fundo * 100).toFixed(2)}% {opt.adesao ? `• Adesão: ${(opt.adesao * 100).toFixed(2)}%` : ""}</div>
-                      <div className="text-sm text-slate-600">Seguro (mensal): {formatBRL(value * opt.seguro)}</div>
+                      <div className="text-sm text-slate-600 mt-1 flex items-center gap-1">
+                        Adm: {(opt.adm * 100).toFixed(2)}% • Fundo: {(opt.fundo * 100).toFixed(2)}% {opt.adesao ? `• Adesão: ${(opt.adesao * 100).toFixed(2)}%` : ""}
+                        <FieldTooltip
+                          content={
+                            <span>
+                              <strong>Taxa de Administração:</strong> cobrada pela administradora pelo gerenciamento do grupo — diluída nas parcelas ao longo do prazo.
+                              <br /><br />
+                              <strong>Fundo de Reserva:</strong> garante o funcionamento do grupo em caso de inadimplência de outros cotistas.
+                              {opt.adesao > 0 && (
+                                <>
+                                  <br /><br />
+                                  <strong>Taxa de Adesão:</strong> cobrada na entrada para registro da sua cota no grupo de consórcio.
+                                </>
+                              )}
+                            </span>
+                          }
+                          side="top"
+                          maxWidthClass="max-w-sm"
+                        />
+                      </div>
+                      <div className="text-sm text-slate-600 flex items-center gap-1">
+                        Seguro (mensal): {formatBRL(value * opt.seguro)}
+                        <FieldTooltip
+                          content="Seguro de vida e prestamista incluso na parcela. Valor calculado sobre o crédito contratado com taxa mensal de 0,038% — protege você e sua família durante o consórcio."
+                          side="top"
+                        />
+                      </div>
                       <div className="text-sm text-slate-600 mt-2">Lance: {formatBRL(lance)} {lance > 0 ? `(${(lance / value * 100).toFixed(2)}%)` : ""}</div>
                       <div className="text-sm text-slate-600 mt-1">Meses considerados até contemplação: {meses}</div>
                     </div>
 
                     <div className="mt-4 md:mt-0 text-right">
-                      <div className="text-xs text-slate-500">Parcela estimada</div>
+                      <div className="text-xs text-slate-500 flex items-center justify-end gap-1">
+                        Parcela estimada
+                        <FieldTooltip
+                          content="Estimativa da parcela mensal baseada na taxa de administração, fundo de reserva, taxa de adesão (se aplicável) e seguro mensal. Não inclui juros financeiros — o consórcio é livre de juros."
+                          side="left"
+                          maxWidthClass="max-w-xs"
+                        />
+                      </div>
                       <div className="text-2xl font-bold text-[#0f172a]">{formatBRL(parcela)}</div>
 
                       <div className="mt-3 text-sm text-slate-700">
-                        <div>Total pago até contemplação (parcelas + lance): <strong>{formatBRL(totalPaidToContempl)}</strong></div>
-                        <div className="mt-1">Total pago ao final do prazo ({opt.prazo} meses): <strong>{formatBRL(totalPaidFull)}</strong></div>
+                        <div className="flex items-center justify-end gap-1">
+                          Total pago até contemplação (parcelas + lance): <strong>{formatBRL(totalPaidToContempl)}</strong>
+                          <FieldTooltip
+                            content="Soma das parcelas pagas nos meses estimados até a contemplação mais o valor do lance oferecido. Representa o desembolso total antes de você receber a carta de crédito."
+                            side="left"
+                            maxWidthClass="max-w-xs"
+                          />
+                        </div>
+                        <div className="mt-1 flex items-center justify-end gap-1">
+                          Total pago ao final do prazo ({opt.prazo} meses): <strong>{formatBRL(totalPaidFull)}</strong>
+                          <FieldTooltip
+                            content="Soma de todas as parcelas durante todo o prazo do consórcio, sem considerar lances ou contemplação antecipada. Representa o custo total máximo do plano."
+                            side="left"
+                            maxWidthClass="max-w-xs"
+                          />
+                        </div>
                       </div>
 
                       <div className="mt-3 flex justify-end">

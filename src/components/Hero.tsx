@@ -24,13 +24,13 @@ const Hero: React.FC = () => {
           <div className="flex flex-col sm:flex-row gap-3">
             <a
               href={`https://wa.me/5512982910109?text=${encodeURIComponent(
-                "Olá Callseg (Consórcio Porto Seguro), vi o site e gostaria de uma simulação personalizada"
+                "Olá Callseg (Consórcio Porto Seguro), vi o site e gostaria de solicitar uma proposta"
               )}`}
               target="_blank"
               rel="noreferrer"
             >
               <Button className="bg-emerald-500 hover:bg-emerald-600 text-white rounded-full px-6 py-3 shadow-lg">
-                Fale com um especialista
+                Solicitar proposta
               </Button>
             </a>
 
