@@ -23,8 +23,12 @@ const Header: React.FC = () => {
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="text-xl font-extrabold text-[#0f172a] tracking-tight">
-            Callseg
+          <Link to="/" className="flex items-center">
+            <img
+              src="/brand/porto-seguro-logo.svg"
+              alt="Porto Seguro"
+              className="h-8 w-auto"
+            />
           </Link>
 
           {/* Desktop nav */}
