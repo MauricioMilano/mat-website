@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { MessageCircle } from "lucide-react";
+import { Lock, MessageCircle } from "lucide-react";
 
 const Footer: React.FC = () => {
   return (
@@ -44,6 +44,10 @@ const Footer: React.FC = () => {
           <p className="text-sm text-slate-200 mb-3">
             Operamos conforme as normas do Banco Central do Brasil e somos assegurados pelo Consórcio da Porto Seguro.
           </p>
+          <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/10 bg-black/70 px-3 py-1 text-xs font-medium text-slate-200 shadow-sm shadow-black/20 backdrop-blur-sm">
+            <Lock className="w-3.5 h-3.5 text-amber-300" />
+            <span>Site seguro</span>
+          </div>
             <a
             className="inline-flex items-center gap-2 bg-amber-400 hover:bg-amber-500 text-[#0f172a] px-4 py-2 rounded-full font-semibold transition-colors"
             href={`https://wa.me/5512982910109?text=${encodeURIComponent("Olá Callseg (Consórcio Porto Seguro), gostaria de uma consultoria")}`}

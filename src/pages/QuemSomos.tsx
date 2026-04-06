@@ -27,11 +27,11 @@ const QuemSomos: React.FC = () => {
         {/* Matheus Carvalho bio */}
         <section className="py-16 px-6 bg-white">
           <div className="max-w-6xl mx-auto grid gap-10 md:grid-cols-2 items-center">
-            <div className="bg-slate-100 rounded-2xl overflow-hidden shadow-lg">
+            <div className="w-full aspect-square bg-slate-100 rounded-2xl overflow-hidden shadow-lg">
               <img
-                src="/placeholder-photo.jpg"
-                alt="Matheus Carvalho - Especialista em Consórcios"
-                className="w-full h-80 object-cover"
+                src="/matheus_carvalho.webp"
+                alt="Matheus Carvalho"
+                className="w-full h-full object-cover"
               />
             </div>
             <div>

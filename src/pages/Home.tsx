@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import Testimonials from "@/components/Testimonials";
 import { Button } from "@/components/ui/button";
-import { Calculator, ArrowRight, Shield, TrendingDown, Truck, Star, CheckCircle } from "lucide-react";
+import { Calculator, ArrowRight, Home as HomeIcon, Car, Truck, Star, CheckCircle } from "lucide-react";
 
 const Home: React.FC = () => {
   return (
@@ -44,7 +44,7 @@ const Home: React.FC = () => {
             <div className="grid gap-6 md:grid-cols-3">
               <div className="bg-white rounded-2xl shadow p-6 flex flex-col gap-3 hover:shadow-lg transition-shadow">
                 <div className="w-12 h-12 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center">
-                  <Shield className="w-6 h-6" />
+                  <HomeIcon className="w-7 h-7" />
                 </div>
                 <h3 className="text-lg font-semibold text-[#0f172a]">Imóveis</h3>
                 <p className="text-sm text-slate-600">Créditos de R$70.000 a R$900.000 com prazo de até 200 meses. Use FGTS como lance.</p>
@@ -54,7 +54,7 @@ const Home: React.FC = () => {
               </div>
               <div className="bg-white rounded-2xl shadow p-6 flex flex-col gap-3 hover:shadow-lg transition-shadow">
                 <div className="w-12 h-12 rounded-lg bg-sky-50 text-sky-600 flex items-center justify-center">
-                  <TrendingDown className="w-6 h-6" />
+                  <Car className="w-7 h-7" />
                 </div>
                 <h3 className="text-lg font-semibold text-[#0f172a]">Auto</h3>
                 <p className="text-sm text-slate-600">Créditos de R$25.000 a R$200.000 com prazos flexíveis de 50 a 90 meses.</p>
@@ -64,7 +64,7 @@ const Home: React.FC = () => {
               </div>
               <div className="bg-white rounded-2xl shadow p-6 flex flex-col gap-3 hover:shadow-lg transition-shadow">
                 <div className="w-12 h-12 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center">
-                  <Truck className="w-6 h-6" />
+                  <Truck className="w-7 h-7" />
                 </div>
                 <h3 className="text-lg font-semibold text-[#0f172a]">Pesados</h3>
                 <p className="text-sm text-slate-600">Créditos de R$180.000 a R$360.000 para frota, transporte e agronegócio.</p>
