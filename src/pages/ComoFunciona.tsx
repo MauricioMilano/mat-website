@@ -1,10 +1,11 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { Button } from "@/components/ui/button";
 import { Home, Calculator, Users, CreditCard, MessageSquare, ArrowRight } from "lucide-react";
+const ThreeStepsCanvas = React.lazy(() => import("@/components/ThreeSteps"));
 
 const steps = [
   {
@@ -67,24 +68,12 @@ const ComoFunciona: React.FC = () => {
           </div>
         </section>
 
-        {/* Steps */}
+        {/* Steps (reimagined with Three.js) */}
         <section className="py-16 px-6 bg-white">
           <div className="max-w-6xl mx-auto">
-            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-5">
-              {steps.map((step, index) => (
-                <div
-                  key={index}
-                  className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 flex flex-col gap-4 hover:shadow-lg transition-shadow duration-300"
-                >
-                  <div className="w-12 h-12 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center">
-                    {step.icon}
-                  </div>
-                  <h3 className="text-lg font-semibold text-[#0f172a]">{step.title}</h3>
-                  <p className="text-sm text-slate-600">{step.description}</p>
-                  <p className="text-xs text-slate-500 mt-1">{step.detail}</p>
-                </div>
-              ))}
-            </div>
+            <Suspense fallback={<div className="text-center p-6">Carregando animação...</div>}>
+              <ThreeStepsCanvas />
+            </Suspense>
           </div>
         </section>
 
