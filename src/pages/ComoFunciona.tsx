@@ -1,11 +1,11 @@
-import React, { Suspense } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import StepsSection from "@/components/StepsSection";
 import { Button } from "@/components/ui/button";
 import { Home, Calculator, Users, CreditCard, MessageSquare, ArrowRight } from "lucide-react";
-const ThreeStepsCanvas = React.lazy(() => import("@/components/ThreeSteps"));
 
 const steps = [
   {
@@ -57,25 +57,22 @@ const ComoFunciona: React.FC = () => {
 
       <main className="flex-1">
         {/* Hero */}
-        <section className="bg-gradient-to-b from-[#0f172a] to-[#081028] text-white py-20 px-6">
+        <section className="bg-gradient-to-b from-[#0f172a] to-[#081028] text-white py-16 sm:py-20 px-6">
           <div className="max-w-6xl mx-auto text-center">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight mb-4">
+            <span className="inline-block text-xs font-semibold tracking-widest uppercase mb-4 px-3 py-1 rounded-full text-emerald-400 bg-emerald-400/10 border border-emerald-400/20">
+              Passo a passo
+            </span>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight">
               Como Funciona
             </h1>
-            <p className="text-slate-200 text-lg max-w-2xl mx-auto">
-              Entenda em passos simples como adquirir sua cota, contratar nosso serviço e ser contemplado com a carta de crédito.
+            <p className="mt-3 text-slate-400 text-sm sm:text-base">
+              Do primeiro contato à carta de crédito na mão — em 5 passos simples.
             </p>
           </div>
         </section>
 
-        {/* Steps (reimagined with Three.js) */}
-        <section className="py-16 px-6 bg-white">
-          <div className="max-w-6xl mx-auto">
-            <Suspense fallback={<div className="text-center p-6">Carregando animação...</div>}>
-              <ThreeStepsCanvas />
-            </Suspense>
-          </div>
-        </section>
+        {/* Steps */}
+        <StepsSection steps={steps} />
 
         {/* Why consortium */}
         <section className="py-16 px-6 bg-slate-50">
